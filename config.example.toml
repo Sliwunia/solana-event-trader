@@ -1,0 +1,48 @@
+# Wstaw prawdziwe adresy. Wartosci REPLACE nie przejda walidacji.
+rpc_http_url = "https://api.devnet.solana.com"
+rpc_ws_url = "wss://api.devnet.solana.com"
+keypair_path = "keys/trader.json"
+
+# Oczekiwany genesis hash klastra; sprawdz go niezaleznym RPC / Solana CLI.
+expected_genesis_hash = "REPLACE_WITH_CLUSTER_GENESIS_HASH"
+
+# Ten adapter: SPL Token Swap 3.0.0, SwapVersion=1, ConstantProduct,
+# legacy SPL Token. Nie Pump.fun, Raydium ani Token-2022.
+swap_program_id = "REPLACE_WITH_AUDITED_SWAP_PROGRAM_ID"
+pool_address = "REPLACE_WITH_POOL_ADDRESS"
+input_mint = "REPLACE_WITH_INPUT_MINT"
+output_mint = "REPLACE_WITH_OUTPUT_MINT"
+source_token_account = "REPLACE_WITH_YOUR_FUNDED_INPUT_TOKEN_ACCOUNT"
+destination_token_account = "REPLACE_WITH_YOUR_EXISTING_OUTPUT_TOKEN_ACCOUNT"
+
+# Wszystkie kwoty sa w najmniejszych jednostkach odpowiedniego tokena.
+amount_in = 1000000
+absolute_minimum_out = 1
+min_input_reserve = 1000000000
+min_output_reserve = 1000000000
+slippage_bps = 100
+max_input_reserve_bps = 50
+
+compute_unit_limit = 150000
+compute_unit_price_micro_lamports = 10000
+max_priority_fee_lamports = 100000
+max_network_fee_lamports = 200000
+min_sol_balance_lamports = 10000000
+skip_preflight = false
+
+# Limity dotycza jednego uruchomienia. Domyslnie najwyzej jedna proba live.
+max_submissions = 1
+max_total_input = 1000000
+cooldown_ms = 5000
+max_event_age_ms = 1500
+rpc_timeout_ms = 2000
+confirmation_timeout_secs = 90
+
+# Zapis podpisu PRZED wyslaniem; nierozstrzygniety wynik blokuje nowe zakupy.
+pending_path = "trade.pending.json"
+
+# Opcjonalny Jito Block Engine; caly tip jest w tej samej transakcji co swap.
+# [jito]
+# bundles_url = "https://mainnet.block-engine.jito.wtf/api/v1/bundles"
+# tip_lamports = 1000
+# auth_env = "JITO_AUTH_UUID"

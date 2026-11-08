@@ -1,0 +1,14 @@
+/target/
+/dist/
+/.tools/
+/config.toml
+/config.local.toml
+/config.before-demo.toml
+/config.setup-devnet.tmp
+/wallet*.json
+/keys/
+*.pending.json
+/solana-event-trader-source.zip
+/.env
+/.env.*
+!/.env.example
